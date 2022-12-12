@@ -50,11 +50,11 @@ header .container {
     Map
 *****************************/
 
-.map {
+.map-box {
     margin-left: auto;
 }
 
-.map p {
+.map-box p {
     font-style: italic;
     text-align: center;
 }
