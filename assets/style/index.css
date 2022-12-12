@@ -1,1 +1,72 @@
 @import './reset.css';
+
+body {
+    background-color: #f3f6fb;
+}
+
+.flexbox {
+    display: flex;
+}
+
+/*****************************
+    Header
+*****************************/
+header {
+    background-color: #fd9d00;
+}
+
+header .container {
+    height: 65px;
+    align-items: center;
+}
+
+.home-link:hover {
+    cursor: pointer;
+}
+
+.header-nav {
+    margin-left: auto;
+}
+
+.header-nav ul {
+    list-style: none;
+}
+
+.link, .home-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.header-nav ul li + li{
+    margin-left: 15px;
+}
+
+/*****************************
+    Map
+*****************************/
+
+.map {
+    margin-left: auto;
+}
+
+.map p {
+    font-style: italic;
+    text-align: center;
+}
+
+section .container {
+    align-items: center;
+}
+.get-started {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #fd9d00;
+    font-weight: 600;
+    color: #fff;
+}
