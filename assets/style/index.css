@@ -24,11 +24,11 @@ header .container {
     cursor: pointer;
 }
 
-.header-nav {
+.nav {
     margin-left: auto;
 }
 
-.header-nav ul {
+.nav ul {
     list-style: none;
 }
 
@@ -42,13 +42,38 @@ header .container {
     text-decoration: underline;
 }
 
-.header-nav ul li + li{
+.nav ul li + li{
     margin-left: 15px;
+}
+/*****************************
+    Banner
+*****************************/
+.hero-banner {
+    height: 600px;
+    background-image: url('../img/trucks.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 1000px 1000px rgb(0 0 0 / 0.4);
+    align-items: center;
+}
+
+.hero-banner div h2 {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
 }
 
 /*****************************
     Map
 *****************************/
+.delivery, .get-started, .info p {
+    margin-top: 30px;
+}
+
+.info {
+    padding-right: 30px;
+}
 
 .map-box {
     margin-left: auto;
@@ -69,4 +94,32 @@ section .container {
     background-color: #fd9d00;
     font-weight: 600;
     color: #fff;
+}
+
+/*****************************
+    Footer
+*****************************/
+
+footer {
+    background-color: #d3d3d3;
+    margin-top: 30px;
+}
+
+footer .container {
+    height: 65px;
+    align-items: center;
+    font-size: 30px;
+}
+
+footer .nav {
+    margin-left: 0;
+}
+
+footer .nav ul li i, .copyright {
+    color: #404040;
+}
+
+.copyright {
+    margin-left: auto;
+    font-size: 17px;
 }
