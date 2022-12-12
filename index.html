@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Gabriel Nicholauson">
+        <meta name="description" content="You are here">
+        <meta name="keywords" content="HTML, CSS, SEO, web, web developpement">
+        <link rel="shortcut icon" href="assets/img/favicon.png?v=2" type="image/x-icon">
+        <link rel="stylesheet" href="assets/style/index.css" media="all">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css' rel='stylesheet' />
+        <script src="assets/script/index.js" type="module"></script>
+        <title>You are here</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                <div class="container flexbox">
+                    <h2><a class="home-link" href="#">Instant</a></h2>
+
+                    <nav class="header-nav">
+                        <ul class="flexbox">
+                            <li><a class="link" href="#">Delivery</a></li>
+                            <li><a class="link" href="#">About us</a></li>
+                            <li><a class="link" href="#">Reviews</a></li>
+                            <li><a class="link" href="#">Contact us</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+            <section>
+                <div class="container flexbox">
+                    <div class="address">
+                        <h2>Our delivery is quick and painless</h2>
+                        <p>
+                            Here at Instant, we pride ourselves on our quick and painless
+                            deliveries. If you need something delivered, and you don't have much
+                            time to waste, Instant has got you covered! Click the button below
+                            to get started.
+                        </p>
+                        <button class="get-started">Get started</button>
+                    </div>
+                    <div class="map">
+                        <div id='map' style='width: 400px; height: 300px;'></div>
+                        <script>
+                            mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FicmllbG4iLCJhIjoiY2xibDFtd2Z2MDM4MDNubjJhNmtkdnhhcyJ9.togKogbGraM7tzZCNaAlqw';
+                            const map = new mapboxgl.Map({
+                                container: 'map', // container ID
+                                style: 'mapbox://styles/mapbox/streets-v12', // style URL
+                                center: [-74.5, 40], // starting position [lng, lat]
+                                zoom: 9, // starting zoom
+                                showUserLocation: true
+                            });
+                            const marker = new mapboxgl.Marker()
+                                .setLngLat([-74.5, 40])
+                                .addTo(map);
+                        </script>
+                        <p>We deliver right to your address!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
