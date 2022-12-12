@@ -1,5 +1,9 @@
 @import './reset.css';
 
+:root {
+    --app-margin: 30px;
+}
+
 body {
     background-color: #f3f6fb;
 }
@@ -15,11 +19,6 @@ header {
     background-color: #fd9d00;
 }
 
-header .container {
-    height: 65px;
-    align-items: center;
-}
-
 .home-link:hover {
     cursor: pointer;
 }
@@ -33,9 +32,7 @@ header .container {
 }
 
 .link, .home-link {
-    color: #fff;
     text-decoration: none;
-    font-weight: 600;
 }
 
 .link:hover {
@@ -43,7 +40,7 @@ header .container {
 }
 
 .nav ul li + li{
-    margin-left: 15px;
+    margin-left: calc(var(--app-margin) / 2);
 }
 /*****************************
     Banner
@@ -55,45 +52,29 @@ header .container {
     background-position: center;
     background-size: cover;
     box-shadow: inset 1000px 1000px rgb(0 0 0 / 0.4);
-    align-items: center;
 }
 
 .hero-banner div h2 {
-    color: #fff;
     font-size: 40px;
-    text-align: center;
 }
 
 /*****************************
     Map
 *****************************/
-.delivery, .get-started, .info p {
-    margin-top: 30px;
-}
 
 .info {
-    padding-right: 30px;
-}
-
-.map-box {
-    margin-left: auto;
+    padding-right: var(--app-margin);
 }
 
 .map-box p {
     font-style: italic;
-    text-align: center;
 }
 
-section .container {
-    align-items: center;
-}
 .get-started {
     width: 100px;
     height: 40px;
     border-radius: 5px;
     background-color: #fd9d00;
-    font-weight: 600;
-    color: #fff;
 }
 
 /*****************************
@@ -102,13 +83,10 @@ section .container {
 
 footer {
     background-color: #d3d3d3;
-    margin-top: 30px;
 }
 
 footer .container {
-    height: 65px;
-    align-items: center;
-    font-size: 30px;
+    font-size: var(--app-margin);
 }
 
 footer .nav {
@@ -120,6 +98,37 @@ footer .nav ul li i, .copyright {
 }
 
 .copyright {
-    margin-left: auto;
     font-size: 17px;
+}
+
+/*****************************
+    Same properties
+*****************************/
+
+.link, .home-link, .hero-banner div h2, .get-started {
+    color: #fff;
+}
+
+.delivery, .get-started, .info p, footer {
+    margin-top: var(--app-margin);
+}
+
+.map-box, .copyright {
+    margin-left: auto;
+}
+
+header .container, footer .container {
+    height: 65px;
+}
+
+header .container, section .container, .hero-banner, footer .container {
+    align-items: center;
+}
+
+.link, .home-link, .get-started {
+    font-weight: 600;
+}
+
+.hero-banner div h2, .map-box p {
+    text-align: center;
 }

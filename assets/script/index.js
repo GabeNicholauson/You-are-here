@@ -7,42 +7,29 @@ const options = {
 };
 
 updateMap();
-
-sessionStorage.clear();
-localStorage.clear();
 /*******************
  *  Functions
 *******************/
 
 function getLocation(position) {
     const { latitude, longitude } = position.coords;
-    displayLocation(longitude, latitude);
+    displayLocation(longitude, latitude, `We deliver right to your address!`);
 }
 
 function errorHandler(error) {
     console.log(error.message);
-    let newScript = document.createElement('script');
-    newScript.innerHTML = `
-        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FicmllbG4iLCJhIjoiY2xibDIxN3hnMDM4bTNvbXdodndkNDhucSJ9.ci6EmdJjXcg1QPWA3DCOIA';
-        const map = new mapboxgl.Map({
-            container: 'map', // container ID
-            style: 'mapbox://styles/mapbox/streets-v12', // style URL
-            center: [30, 30], // starting position [lng, lat]
-            zoom: 5, // starting zoom
-        })`;
-    map.appendChild(newScript);
-    mapMessage.innerHTML = `Couldn't find address`;
+    displayLocation(0, 0, `Couldn't find your address`);
 }
 
 function updateMap() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getLocation, errorHandler, options);
     } else {
-        mapMessage.innerHTML = `Geolocation is not supported by your browser`;
+        displayLocation(0, 0, `Geolocation is not supported by your browser`);
     }
 }
 
-function displayLocation(long, lat) {
+function displayLocation(long, lat, message) {
     let newScript = document.createElement('script');
     newScript.innerHTML = `
         mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FicmllbG4iLCJhIjoiY2xibDIxN3hnMDM4bTNvbXdodndkNDhucSJ9.ci6EmdJjXcg1QPWA3DCOIA';
@@ -56,5 +43,5 @@ function displayLocation(long, lat) {
             .setLngLat([${long}, ${lat}])
             .addTo(map);`;
     map.appendChild(newScript);
-    mapMessage.innerHTML = `We deliver right to your address!`;
+    mapMessage.innerHTML = message;
 }
