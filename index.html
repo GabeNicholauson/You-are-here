@@ -36,7 +36,7 @@
 
             <section>
                 <div class="container flexbox">
-                    <div class="address">
+                    <div class="info">
                         <h2>Our delivery is quick and painless</h2>
                         <p>
                             Here at Instant, we pride ourselves on our quick and painless
@@ -46,22 +46,11 @@
                         </p>
                         <button class="get-started">Get started</button>
                     </div>
-                    <div class="map">
-                        <div id='map' style='width: 400px; height: 300px;'></div>
-                        <script>
-                            mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FicmllbG4iLCJhIjoiY2xibDFtd2Z2MDM4MDNubjJhNmtkdnhhcyJ9.togKogbGraM7tzZCNaAlqw';
-                            const map = new mapboxgl.Map({
-                                container: 'map', // container ID
-                                style: 'mapbox://styles/mapbox/streets-v12', // style URL
-                                center: [-74.5, 40], // starting position [lng, lat]
-                                zoom: 9, // starting zoom
-                                showUserLocation: true
-                            });
-                            const marker = new mapboxgl.Marker()
-                                .setLngLat([-74.5, 40])
-                                .addTo(map);
-                        </script>
-                        <p>We deliver right to your address!</p>
+                    <div class="map-box">
+                        <div class="map">
+                            <div id='map' style='width: 400px; height: 300px;'></div>
+                        </div>
+                        <p class="map-message"></p>
                     </div>
                 </div>
             </section>

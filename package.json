@@ -20,5 +20,8 @@
   "homepage": "https://github.com/GabeNicholauson/You-are-here#readme",
   "devDependencies": {
     "lite-server": "^2.2.0"
+  },
+  "dependencies": {
+    "mapbox-gl": "^2.11.1"
   }
 }
